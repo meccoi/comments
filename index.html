@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Newsletter</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@heroicons/react@latest/dist/index.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        * {
+            padding: unset;
+            margin: unset;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+        }
+
+        body{
+            background-color: #dfe1e6;
+        }
+
+        .parent{
+            border: .1rem solid grey;
+            border-style: dashed;
+        }
+
+        main{
+            border: 1px solid red;
+        }
+
+        img{
+            max-width: 100%;
+        }
+
+        main img{
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+
+        main .profile img{
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+        }
+
+        .profile{
+            cursor: pointer;
+        }
+
+         .at-link {
+      color: blue;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="grid lg:grid-cols-2 items-start  justify-center lg:justify-start max-w-6xl  ">
+            
+
+           
+            <div class="parent p-5 min-h-screen sticky top-0">
+                <div class="bg-white rounded-lg shadow p-4 space-y-4">
+                    <div class="profile grid grid-cols-3 gap-2 items-center justify-center">
+                        <div onclick="getUrl(this)" class="k bg-yellow-100 border-2 border-yellow-400 rounded-lg h-40 flex items-center justify-center">
+                            <img src="https://i.ibb.co/HrnZKgn/a.png" alt="">
+                        </div>
+                        <div onclick="getUrl(this)" class="k border-2 border-yellow-100 rounded-lg h-40 flex items-center justify-center">
+                            <img src="https://i.ibb.co/34wwJMS/b.png" alt="">
+                        </div>
+                        <div onclick="getUrl(this)" class="k border-2 border-yellow-100 rounded-lg h-40 flex items-center justify-center">
+                            <img src="https://i.ibb.co/HCM12xt/c.png" alt="">
+                        </div>
+                        <div onclick="getUrl(this)" class="k  border-2 border-yellow-100 rounded-lg h-40 flex items-center justify-center">
+                            <img src="https://i.ibb.co/vvX5HM1/d.png" alt="">
+                        </div>
+                        <div onclick="getUrl(this)" class="k border-2 border-yellow-100 rounded-lg h-40 flex items-center justify-center">
+                            <img src="https://i.ibb.co/nk6N0LN/e.png" alt="">
+                        </div>
+                        <div onclick="getUrl(this)" class="k border-2 border-yellow-100 rounded-lg h-40 flex items-center justify-center">
+                            <img src="https://i.ibb.co/JcZk1G9/f.png" alt="">
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <label for="name" class="font-medium">ENTER YOUR NAME:</label>
+                        <input id="name" type="text" class="bg-gray-100 text-sm  p-2  w-full border border-gray-300 focus:border-blue-500 focus:outline-none" placeholder="John Doe">
+                        <div class="flex justify-end items-center gap-2">
+                            <button id="edit" class="bg-gray-600 text-sm  text-white px-4 py-2 rounded-lg">Edit</button>
+                        <button id="save" class="bg-blue-600 text-sm  text-white px-4 py-2 rounded-lg">Save</button>
+                        </div>
+                    </div>
+                </div>
+           </div>
+
+           <div class="parent p-5 min-h-screen w-full ">
+            <div class=" comments-container">
+                <div>
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-4 space-y-2">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-4 items-center">
+                                    <img src="https://cdn.dribbble.com/users/21456093/avatars/normal/data?1720703126" alt="image">
+                                    <div>
+                                        <div>
+                                            <p class="font-semibold">Liam Rubicorn</p>
+                                            <span class="text-gray-700">25 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span>...</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-base font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi officiis vel delectus, architecto porro maxime placeat lauda.</p>
+                            </div>
+                            <div class="space-y-2 pt-3">
+                                <div class="flex justify-between items-center">
+                                    <button class="text-gray-500 underline font-medium text-sm">REPLY</button>
+                                    <span class="text-gray-500 text-sm">#31</span>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-4 space-y-2">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-4 items-center">
+                                    <img src="https://cdn.dribbble.com/users/21456093/avatars/normal/data?1720703126" alt="image">
+                                    <div>
+                                        <div>
+                                            <p class="font-semibold">Liam Rubicorn</p>
+                                            <span class="text-gray-700">25 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span>...</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-base font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi officiis vel delectus, architecto porro maxime placeat lauda.</p>
+                            </div>
+                            <div class="space-y-2 pt-3">
+                                <div class="flex justify-between items-center">
+                                    <button class="text-gray-500 underline font-medium text-sm">REPLY</button>
+                                    <span class="text-gray-500 text-sm">#31</span>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                    <div>
+                        <div class="h-20 w-1 bg-gray-400 ml-6 "></div>
+                        <div class="h-1 w-7 bg-gray-400 ml-6"></div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-4 space-y-2">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-4 items-center">
+                                    <img src="https://cdn.dribbble.com/users/21456093/avatars/normal/data?1720703126" alt="image">
+                                    <div>
+                                        <div>
+                                            <p class="font-semibold">Liam Rubicorn</p>
+                                            <span class="text-gray-700">25 minutes ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span>...</span>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-base font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi officiis vel delectus, architecto porro maxime placeat lauda.</p>
+                            </div>
+                            <div class="space-y-2 pt-3">
+                                <div class="flex justify-between items-center">
+                                    <button class="text-gray-500 underline font-medium text-sm">REPLY</button>
+                                    <span class="text-gray-500 text-sm">#31</span>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="py-5 hidden">
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-4 flex justify-between items-center border-b">
+                        <h2 class="font-medium">Comments</h2>
+                        <span>X</span>
+                    </div>
+                    <div class="p-4 space-y-2">
+                        <div class="flex justify-between items-start">
+                            <div class="flex gap-4 items-center">
+                                <img src="https://cdn.dribbble.com/users/21456093/avatars/normal/data?1720703126" alt="image">
+                                <div>
+                                    <div>
+                                        <p class="font-semibold">Liam Rubicorn</p>
+                                        <span class="text-gray-700">25 minutes ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>...</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-900 text-base font-medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi officiis vel delectus, architecto porro maxime placeat lauda.</p>
+                        </div>
+                        <div class="space-y-2 pt-3">
+                            <div class="flex justify-between items-center">
+                                <button class="text-gray-500 underline font-medium text-sm">REPLY</button>
+                                <span class="text-gray-500 text-sm">#31</span>
+                            </div>
+                            <div class="relative">
+                                <textarea placeholder="Enter your comment" class="bg-gray-100 text-sm h-24 rounded-bl-lg px-4 pt-3 rounded-br-lg w-full border border-gray-300 focus:border-blue-500 focus:outline-none"></textarea>
+
+                                <button style="position: absolute; right: 10px; bottom: 17px;" class="bg-blue-600 text-sm  text-white px-4 py-1 rounded-lg">Send</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="py-5">
+                <div class="bg-white rounded-lg shadow">
+                    <div class="p-4 ">
+                        <div class="space-y-2 ">
+                            <div class="relative">
+                                <textarea id="comment" placeholder="Enter your comment" class="bg-gray-100 text-sm h-24 rounded-bl-lg px-4 pt-3 rounded-br-lg w-full border block border-gray-300 focus:border-blue-500 focus:outline-none"></textarea>
+
+                                <button id="submit" style="position: absolute; right: 10px; bottom: 10px;" class="bg-blue-600 text-sm  text-white px-4 py-1 rounded-lg">Send</button>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </main>
+</body>
+
+
+<script type="module">
+    let urlImage;
+
+  
+function getLocalUrl(){
+    let profile = localStorage.getItem('profiles');
+
+    if (profile) {
+        profile = JSON.parse(profile);
+        if (Array.isArray(profile)) {
+            if (profile.length > 0) {
+         
+                urlImage = profile[0].img;
+               
+
+            }
+        } else {
+            console.log(profile);
+            urlImage = profile.name;
+            urlImage = profile.img;
+           
+
+        }
+    } else {
+        console.log('No profiles found in localStorage.');
+    }
+
+    console.log("BASTAAAAAAAAAA",urlImage);
+}
+
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const supabaseUrl = 'https://latvpxaukzytgsgctrrr.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxhdHZweGF1a3p5dGdzZ2N0cnJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA5NTUzNDMsImV4cCI6MjAzNjUzMTM0M30.7wWs6aIaLThkojZwqnjqH3kRr0cQ4ktJ6cMSwVqXPug';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+let btn = document.querySelector('#submit');
+
+
+
+btn.addEventListener('click', async (e) =>{
+    getLocalUrl();
+    let name = document.querySelector('#name').value;
+    let comment = document.querySelector('#comment').value;
+    const { data, error } = await supabase.from('comments').insert({ name, comment, profile: urlImage})
+
+    if(error){
+        alert("failed to submit, pls try again");
+    }else{
+        updateNewComments();
+        alert("Successfully inserted a row");
+        document.querySelector('#comment').value = '';
+    }
+    
+})
+
+async function updateNewComments(){
+
+    const { data, error:dataErr } = await supabase.from('comments').select('*').order('id', { ascending: true});
+
+    if(dataErr){
+        alert("Error fetching data!");
+    }
+    let htmlComments = '';
+
+    function formatTimeAgo(timestamp) {
+    const date = new Date(timestamp);
+    const now = new Date();
+    const elapsed = now - date;
+    const seconds = Math.floor(elapsed / 1000);
+
+    if (seconds < 60) {
+        return `${seconds} seconds ago`;
+    } else if (seconds < 3600) {
+        const minutes = Math.floor(seconds / 60);
+        return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`;
+    } else if (seconds < 86400) {
+        const hours = Math.floor(seconds / 3600);
+        return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`;
+    } else {
+        const days = Math.floor(seconds / 86400);
+        return `${days} ${days === 1 ? 'day' : 'days'} ago`;
+    }
+}
+
+
+    data.forEach(comment => {
+       
+        console.log(comment.comment);
+  
+
+ 
+        htmlComments += `
+        <div id='${comment.id}'>
+            <div class='basta flex flex-col gap-2' >
+                <div class='w-full'>
+                    <div class="bg-white rounded-lg shadow">
+                        <div class="p-4 space-y-2">
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-4 items-center">
+                                    <img id='commentProfile' src="${comment.profile}" alt="image">
+                                    <div>
+                                        <div>
+                                            <p class="font-semibold" >${comment.name}</p>
+                                            <span class="text-gray-700" >${formatTimeAgo(comment.created_at)}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='relative'>
+                                    <span id="toggleButton" class="toggleButton cursor-pointer text-2xl">...</span>
+                                <div id="menu" class="hidden menu absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                                    <div class="py-1">
+                                        <button class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="deleteAction()">Delete</button>
+                                        <button class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="cancelAction()">Cancel</button>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-base font-medium" >${comment.comment}</p>
+                            </div>
+                            <div class="space-y-2 pt-3">
+                                <div class="flex justify-between items-center">
+                                    <button  reply-name='${comment.name}' reply-comment='${comment.comment}' reply-created='${formatTimeAgo(comment.created_at)}' reply-id='${comment.id}' repl-id='${comment.id}'  class="reply text-gray-500 underline font-medium text-sm">REPLY</button>
+                                    <span class="text-gray-500 text-sm">#${comment.id}</span>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        `;
+        let ifComments = 0;
+        let ifCommentsDone = false;
+       let dataReplies = comment.replies;
+
+       
+      if(dataReplies !== null){
+        dataReplies.forEach(function(data, index, array){
+            if (data) {
+        ifComments += 1;
+        
+    }
+
+    if (index === array.length - 1) {
+        console.log("Loop completed or finished");
+        console.log("Total comments:", ifComments);
+        ifCommentsDone = true;
+        console.log(ifCommentsDone);
+        console.log("INDEX ", index);
+        console.log("ARRAY ", array);
+    }
+        console.log(data);
+        
+       
+            htmlComments += `
+            <div class='w-full flex gap-2'  >
+                    <div>
+                <div class="h-20 w-1 bg-gray-400 ml-6"></div>
+                <div class="h-1 w-7 bg-gray-400 ml-6"></div>
+            `;
+           
+                if (ifCommentsDone !== true) {
+                htmlComments += `<div class="h-full w-1 bg-gray-400 ml-6"></div>`;
+                }
+       
+         
+            htmlComments += `
+            </div>
+                    <div class="bg-white rounded-lg shadow w-full my-2">
+                        <div class="p-4 space-y-2" id='${data.id}'>
+                            <div class="flex justify-between items-start">
+                                <div class="flex gap-4 items-center">
+                                    <img src="${data.profileUrl}" alt="image">
+                                    <div>
+                                        <div>
+                                            <p class="font-semibold" >${data.name}</p>
+                                            <span class="text-gray-700" >${formatTimeAgo(data.created)}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class='relative'>
+                                    <span id="toggleButton" class="toggleButton cursor-pointer text-2xl">...</span>
+                                <div id="menu" class="hidden menu absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                                    <div class="py-1">
+                                        <button class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="deleteAction()">Delete</button>
+                                        <button class="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="cancelAction()">Cancel</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-900 text-base font-medium" >${data.comment}</p>
+                            </div>
+                            <div class="space-y-2 pt-3">
+                                <div class="flex justify-between items-center">
+                                    <button repl-id='${data.id}' reply-name='${data.name}' reply-comment='${data.comment}' reply-created='${formatTimeAgo(data.created)}' reply-id='${comment.id}'  class="reply text-gray-500 underline font-medium text-sm">REPLY</button>
+                                    <span class="text-gray-500 text-sm">#${data.id}</span>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            
+            `;
+        })
+      }
+      
+        
+
+    
+    })
+    let html2 = '';
+
+$(document).on('click', '.reply', function() {
+    const id = $(this).attr('reply-id');
+    const id_name = $(this).attr('reply-name');
+    const id_created = $(this).attr('reply-created');
+    const id_comment = $(this).attr('reply-comment');
+    const replId = $(this).attr('repl-id');
+    console.log(replId);
+
+
+    if ($('#' + id + ' .basta')) { 
+    
+        html2 = `
+        <div class="basta rep flex gap-2">
+            <div>
+                <div class="h-20 w-1 bg-gray-400 ml-6"></div>
+                <div class="h-1 w-7 bg-gray-400 ml-6"></div>
+            </div>
+            <div class="bg-white rounded-lg shadow w-full">
+
+                <div class="space-y-2 ">
+                    <div class="relative">
+                        <div contenteditable="true" placeholder="Enter your comment" id="${id}comment" class="block bg-gray-100 text-sm h-24 rounded-bl-lg px-4 pt-3 rounded-br-lg w-full border border-gray-300 focus:border-blue-500 focus:outline-none"><a href='' class='text-blue-600'>@${id_name}</a> ‎   </div>
+                        <button onclick='addReplyComment(this)'  id="${id}" style="position: absolute; right: 10px; bottom: 17px;" class="bg-blue-600 text-sm text-white px-4 py-1 rounded-lg">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+        $('.rep').remove();
+        $('#' + replId).append(html2);
+
+
+    }
+});
+
+
+
+
+console.log("he");
+    document.querySelector('.comments-container').innerHTML = htmlComments;
+    window.updateNewComments = updateNewComments;
+
+}
+
+
+
+updateNewComments();
+
+
+   
+</script>
+
+
+
+<script type="module">
+    
+        import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const supabaseUrl2 = 'https://latvpxaukzytgsgctrrr.supabase.co';
+const supabaseKey2 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxhdHZweGF1a3p5dGdzZ2N0cnJyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjA5NTUzNDMsImV4cCI6MjAzNjUzMTM0M30.7wWs6aIaLThkojZwqnjqH3kRr0cQ4ktJ6cMSwVqXPug';
+const supabase2 = createClient(supabaseUrl2, supabaseKey2);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    async function addReplyComment(e){
+    let name = document.querySelector('#name').value;
+    
+    let comment = $('#' + e.id + 'comment').html();
+    let replied_id = e.id;
+    // console.log(comment);
+    // const { data, error } = await supabase2.from('comments').insert({ name, comment, replied_id })
+
+    // if(error){
+    //     alert("failed to submit, pls try again");
+    // }else{
+    //     updateNewComments();
+    //     alert("Successfully inserted a row");
+    //     document.querySelector('#comment').value = '';
+    // }
+    function generateRandomId(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
+
+let urlImage;
+function getLocalUrl(){
+    let profile = localStorage.getItem('profiles');
+
+    if (profile) {
+        profile = JSON.parse(profile);
+        if (Array.isArray(profile)) {
+            if (profile.length > 0) {
+         
+                urlImage = profile[0].img;
+               
+
+            }
+        } else {
+            console.log(profile);
+            urlImage = profile.name;
+            urlImage = profile.img;
+           
+
+        }
+    } else {
+        console.log('No profiles found in localStorage.');
+    }
+}
+getLocalUrl();
+// Get the current date in ISO format
+const currentDate = new Date().toISOString();
+ 
+    const newReply = {
+    name: name,
+    comment: comment,
+    created: currentDate, // Set to current date and time
+    profileUrl: urlImage,
+    id: generateRandomId(8) // Generate an 8-character random ID
+};
+
+async function fetchExistingData(rowId) {
+    try {
+        const { data, error } = await supabase2
+            .from('comments')
+            .select('replies')
+            .eq('id', rowId)
+            .single();
+
+        if (error) {
+            console.error("Error fetching data:", error);
+            return null;
+        }
+
+        return data;
+    } catch (error) {
+        console.error("Fetch existing data error:", error.message);
+        return null;
+    }
+}
+
+async function updateReplies(rowId, newReply) {
+    try {
+        const existingData = await fetchExistingData(rowId);
+
+        if (!existingData) {
+            console.error('No existing data found for row ID:', rowId);
+            return;
+        }
+
+        const existingReplies = existingData.replies || [];
+        const updatedReplies = [...existingReplies, newReply];
+
+        // Update the 'replies' field with the updated array
+        const { data, error } = await supabase2
+            .from('comments')
+            .update({ replies: updatedReplies })
+            .eq('id', rowId);
+
+        if (error) {
+            console.error('Error updating data:', error.message);
+        } else {
+            updateNewComments();
+            console.log('Data updated successfully:', data);
+        }
+    } catch (error) {
+        console.error('Update replies error:', error.message);
+    }
+}
+
+
+updateReplies(replied_id, newReply);
+
+}
+
+window.addReplyComment = addReplyComment;
+
+});
+
+$(document).on('click', '.toggleButton', function() {
+    $('.menu').addClass('hidden'); 
+    $(this).next('.menu').toggle('hidden'); 
+});
+
+
+
+</script>
+
+
+<script>
+
+
+
+
+        function getUrl(url){
+       let allImgProfile = document.querySelectorAll('.k');
+
+        imgurl = url.querySelector('img').src;
+
+       allImgProfile.forEach(function(e){ 
+        e.classList.remove('bg-yellow-100'); 
+        e.classList.remove('border-yellow-400');
+
+        url.classList.add('bg-yellow-100'); 
+        url.classList.add('border-yellow-400');
+
+ 
+
+        
+    })};
+        function saveProfileFromLocal(profile){
+            localStorage.setItem('profiles', JSON.stringify(profile));
+        }
+
+        function getUrlRes(){
+            return imgurl ? imgurl : 'https://i.ibb.co/HrnZKgn/a.png';
+        }
+        function addNewProfile(){
+      
+            let url = getUrlRes();
+            let name = $('#name').val();
+
+           
+
+            const newProfile = {
+                name: name,
+                img: url
+            }
+            saveProfileFromLocal(newProfile);
+
+        }
+        $('#save').on('click', function(){
+            let named = $('#name').val();
+            if(named !== ''){
+                addNewProfile();
+                
+            }else{
+                alert("input field is empty!");
+            }
+           
+
+
+        })
+
+
+
+        let pName;
+
+function renderProfile() {
+    let profile = localStorage.getItem('profiles');
+    if (profile) {
+        profile = JSON.parse(profile);
+        if (Array.isArray(profile)) {
+            if (profile.length > 0) {
+                pName = profile[0].name;
+                console.log(pName); 
+                document.querySelector('#name').value = pName;
+            }
+        } else {
+            console.log(profile);
+            pName = profile.name;
+      
+            document.querySelector('#name').value = pName;
+        }
+    } else {
+        console.log('No profiles found in localStorage.');
+    }
+}
+
+
+renderProfile();
+    
+</script>
