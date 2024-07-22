@@ -26,7 +26,14 @@
             background-color: #dfe1e6;
         }
 
-        
+        /* .parent{
+            border: .1rem solid grey;
+            border-style: dashed;
+        }
+
+        main{
+            border: 1px solid red;
+        } */
 
         img{
             max-width: 100%;
@@ -62,7 +69,7 @@
             
 
            
-            <div class="parent x p-5  fixed lg:sticky top-0 w-full" >
+            <div class="parent x p-5  fixed lg:sticky top-0 " >
                 <div class="bg-white rounded-lg shadow p-4 space-y-4 ">
                     <div class="nav lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" style="width: 25px; height: 25px;" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -294,12 +301,21 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 let btn = document.querySelector('#submit');
 
+function sanitizeInputs(input){
+        let tempEle = document.createElement('span');
+        tempEle.textContent = input;
 
+        return tempEle.innerHTML;
+}
 
 btn.addEventListener('click', async (e) =>{
     getLocalUrl();
     let name = document.querySelector('#name').value;
 let comment = document.querySelector('#comment').value;
+
+
+let newN = sanitizeInputs(name);
+let newC = sanitizeInputs(comment);
 
 if (name === '' && comment === '') {
     return alert("Enter both user name and comment");
@@ -309,7 +325,7 @@ if (name === '' && comment === '') {
     return alert("Enter comment");
 }
 
-    const { data, error } = await supabase.from('comments').insert({ name, comment, profile: urlImage})
+    const { data, error } = await supabase.from('comments').insert({ name:newN, comment:newC, profile: urlImage})
 
     if(error){
         alert("failed to submit, pls try again");
@@ -556,8 +572,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     let name = document.querySelector('#name').value;
-    let comment = $('#' + e.id + 'comment').val();
+    let comment = $('#' + e.id + 'comment').val().trim();
     let replied_id = e.id;
+
+    function sanitizeInputs(input){
+        let tempEle = document.createElement('span');
+        tempEle.textContent = input;
+
+        return tempEle.innerHTML;
+    }
+
+
 
     // console.log(comment);
     // const { data, error } = await supabase2.from('comments').insert({ name, comment, replied_id })
@@ -607,8 +632,8 @@ getLocalUrl();
 const currentDate = new Date().toISOString();
  
     const newReply = {
-    name: name,
-    comment: comment,
+    name: sanitizeInputs(name),
+    comment: sanitizeInputs(comment),
     created: currentDate, // Set to current date and time
     profileUrl: urlImage,
     id: generateRandomId(8) // Generate an 8-character random ID
@@ -812,7 +837,8 @@ renderProfile();
     
 
     $('.nav').on('click', function(){
-        $('.navMenu').toggle('hidden ');
+        $('.navMenu').toggleClass('hidden ');
+        $('.x').toggleClass('w-full');
        
     })
 </script>
